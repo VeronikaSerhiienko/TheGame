@@ -1,0 +1,79 @@
+body {
+  background-color: $bgcolor;
+  font-family: $font-stack;
+}
+
+.container {
+  padding-top: 90px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.wrapper {  
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(12, 75px);
+  grid-template-rows: repeat(5, 75px);
+}
+
+.box {
+  position: relative;
+  background-color: $squarecolor;
+  @include border-radius($bradius);
+  @include transition($fade ease-out);
+  
+  &:hover {
+  background-color: $yellow;
+  @include transition(0s);
+  }    
+} 
+.wrapper__input {
+  position:absolute;
+  bottom: 9999px;
+  visibility: hidden; 
+  
+  &:checked {
+    
+    &~.box{
+      width: 150px;
+      height: 150px;      
+      z-index: 2;
+      border: solid $yellow 1px;          
+      background: transparent;
+      @include transition(1s ease-out);
+      @include border-radius(80px);
+
+      
+      &:hover {
+      background-color: $yellow;
+      @include transition(0s);
+      }
+    }
+  }
+}
+.wrapper__input:checked+.wrapper__label:before {
+  background-color: $yellow;
+  @include border-radius(50%);
+}
+
+.wrapper__label {
+  position: absolute;
+  right: 15%;
+  font-size: 20px;
+  font-weight: bold;
+  color: $text-color;
+  top:33px;
+  cursor:pointer;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -34px;
+    width: 15px;
+    height: 15px;
+    border: $yellow;    
+    background-color: black;
+    @include border-radius($bradius);  
+  }   
+}
