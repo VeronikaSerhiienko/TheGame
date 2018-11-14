@@ -37,6 +37,9 @@ body {
   -o-transition: 4s ease-out;
   -webkit-transition: 4s ease-out;
   transition: 4s ease-out;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
 }
 
 .box:hover {
@@ -44,6 +47,9 @@ body {
   -o-transition: 0s;
   -webkit-transition: 0s;
   transition: 0s;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
 }
 
 .wrapper__input {
@@ -61,6 +67,9 @@ body {
   -o-transition: 1s ease-out;
   -webkit-transition: 1s ease-out;
   transition: 1s ease-out;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
   -webkit-border-radius: 80px;
   border-radius: 80px;
 }
@@ -70,6 +79,9 @@ body {
   -o-transition: 0s;
   -webkit-transition: 0s;
   transition: 0s;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
 }
 
 .wrapper__input:checked + .wrapper__label:before {
