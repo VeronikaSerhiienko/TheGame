@@ -12,8 +12,8 @@ body {
 .wrapper {  
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(12, 75px);
-  grid-template-rows: repeat(5, 75px);
+  grid-template-columns: repeat(12, $squaresidesize);
+  grid-template-rows: repeat(5, $squaresidesize);
 }
 
 .box {
@@ -22,38 +22,39 @@ body {
   @include border-radius($bradius);
   @include transition($fade ease-out);
   
-  &:hover {
-  background-color: $yellow;
-  @include transition(0s);
-  }    
+    &:hover {
+      background-color: $yellow;
+      @include transition(0s);
+    }    
 } 
 .wrapper__input {
-  position:absolute;
+  position: absolute;
   bottom: 9999px;
   visibility: hidden; 
   
   &:checked {
     
-    &~.box{
+    & ~ .box{
       width: 150px;
       height: 150px;      
       z-index: 2;
       border: solid $yellow 1px;          
       background: transparent;
       @include transition(1s ease-out);
-      @include border-radius(80px);
+      @include border-radius($squaresidesize * 1.06);
 
       
-      &:hover {
+        &:hover {
+          background-color: $yellow;
+          @include transition(0s);
+        }
+    }
+
+    & + .wrapper__label:before {
       background-color: $yellow;
-      @include transition(0s);
-      }
+      @include border-radius(50%);
     }
   }
-}
-.wrapper__input:checked+.wrapper__label:before {
-  background-color: $yellow;
-  @include border-radius(50%);
 }
 
 .wrapper__label {
@@ -62,7 +63,7 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: $text-color;
-  top:33px;
+  top: 33px;
   cursor:pointer;
   
   &:before {

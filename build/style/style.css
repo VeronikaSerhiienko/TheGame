@@ -70,8 +70,8 @@ body {
   -webkit-transition-property: background-color;
   -o-transition-property: background-color;
   transition-property: background-color;
-  -webkit-border-radius: 80px;
-  border-radius: 80px;
+  -webkit-border-radius: 79.5px;
+  border-radius: 79.5px;
 }
 
 .wrapper__input:checked ~ .box:hover {
