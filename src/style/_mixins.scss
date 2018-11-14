@@ -10,4 +10,8 @@
   -o-transition:      $transition;
   -webkit-transition: $transition;
   transition:         $transition;
+  -webkit-transition-property: background-color;
+    -moz-transition-property: background-color;
+    -o-transition-property: background-color;
+    transition-property: background-color;
 }
